@@ -1,10 +1,10 @@
-# 🎨 Todoplan — Frontend Web Application
+# Todoplan — Frontend Web Application
 
 > หน้าเว็บแอปพลิเคชัน Todo List สไตล์โมเดิร์น Dark Forest พัฒนาด้วย **Vue 3** (Composition API, `<script setup>`) ร่วมกับ **TypeScript**, **Tailwind CSS 4** และ **Vite 8** เชื่อมต่อกับ RESTful API Server ([Todo_List_Backend](https://github.com/V0dka405/Todo_List_Backend))
 
 ---
 
-## 🌟 จุดเด่นและฟังก์ชันการใช้งาน (Key Features)
+## จุดเด่นและฟังก์ชันการใช้งาน (Key Features)
 
 - **การจัดการ Todo ครบวงจร**:
   - เพิ่มรายการงานใหม่ (กด Enter หรือคลิกปุ่ม "+ New task")
@@ -35,7 +35,7 @@
 
 ---
 
-## 📁 โครงสร้างโปรเจกต์ (Project Structure)
+## โครงสร้างโปรเจกต์ (Project Structure)
 
 ```text
 todo-frontend/
@@ -71,7 +71,7 @@ todo-frontend/
 
 ---
 
-## 🚀 วิธีการเริ่มต้นใช้งาน (Getting Started)
+## วิธีการเริ่มต้นใช้งาน (Getting Started)
 
 ### ข้อกำหนดเบื้องต้น:
 ต้องมี RESTful API Server ทำงานอยู่ก่อน (ดูที่คู่มือของ [Todo_List_Backend](https://github.com/V0dka405/Todo_List_Backend))
@@ -114,7 +114,7 @@ npm run dev
 
 ---
 
-## 🛠 Scripts คำสั่งทั้งหมด
+##  Scripts คำสั่งทั้งหมด
 
 | คำสั่ง | หน้าที่การทำงาน |
 | :--- | :--- |
@@ -124,5 +124,5 @@ npm run dev
 
 ---
 
-## 🔗 Repository ที่เกี่ยวข้อง
+## Repository ที่เกี่ยวข้อง
 - **Backend API Server**: [https://github.com/V0dka405/Todo_List_Backend](https://github.com/V0dka405/Todo_List_Backend)
