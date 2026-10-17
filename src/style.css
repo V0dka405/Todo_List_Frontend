@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Prompt', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html, html.dark {
+  color-scheme: dark;
+  background-color: #0c1510;
+  background-image:
+    radial-gradient(at 20% 15%, rgba(28, 68, 44, 0.55) 0px, transparent 60%),
+    radial-gradient(at 80% 25%, rgba(18, 52, 34, 0.6) 0px, transparent 60%),
+    radial-gradient(at 50% 85%, rgba(14, 42, 27, 0.7) 0px, transparent 70%),
+    radial-gradient(at 85% 90%, rgba(32, 75, 48, 0.4) 0px, transparent 60%);
+  background-attachment: fixed;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: var(--font-sans);
+  touch-action: manipulation;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.03);
+  }
+}
+
+.animate-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.animate-pop {
+  animation: pop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ---- Todo list transitions (used by <TransitionGroup name="todo">) ---- */
+.todo-move,
+.todo-enter-active,
+.todo-leave-active {
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.todo-enter-from {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.todo-leave-to {
+  opacity: 0;
+  transform: translateX(24px);
+}
+
+/* Take leaving items out of the flow so the others can slide up smoothly. */
+.todo-leave-active {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .todo-move,
+  .todo-enter-active,
+  .todo-leave-active {
+    transition: none;
+  }
+}

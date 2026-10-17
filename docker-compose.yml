@@ -1,0 +1,15 @@
+# Serves the built frontend with nginx at http://localhost:8080
+#
+# Start the API first (see the todo-backend README: `docker compose up -d --build`
+# or `npm run dev`). To point the frontend at another API, rebuild with:
+#   VITE_API_BASE_URL=https://api.example.com/api docker compose up -d --build
+services:
+  web:
+    build:
+      context: .
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:3333/api}
+    container_name: todo-web
+    restart: unless-stopped
+    ports:
+      - '8080:80'
